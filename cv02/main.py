@@ -15,12 +15,21 @@ def start_game():
     while True:
         bet =  int(input(f"Select your bet ({user_bilance}eur):"))
 
+        if bet > 1000:
+            print(f"Bet can be only ({user_bilance} eur)!")
+            continue
+
         print("Select color:")
         print("\t\t0 - Red")   # 48.5%
         print("\t\t1 - White") # 48.5%
         print("\t\t2 - Green") # 3%
         print("\t\t3 - Leave game")
         selection = int(input("Select: "))
+
+        if selection in [4,5,6,7,8]:
+            print("Wrong input!")
+            continue
+
 
         if selection == 9: 
             return
